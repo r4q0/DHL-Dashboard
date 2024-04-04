@@ -1,12 +1,14 @@
 packageType
-volumetricWeight
+weight
 events {
 	category
-	"2024-03-19T23:01:03+01:00"
-	PIECE_EVENT
+	timestamp
 	weight
 	status
 	}
 
+	delivery addres (pickup)
+
 receiver {
 	name
+	address
