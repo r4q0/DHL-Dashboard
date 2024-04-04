@@ -1,18 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MainController;
+use App\Http\Controllers\RenderController;
+use Illuminate\Http\Request;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use function Termwind\render;
 
 Route::get('/create', function () {
-    return view('create');
+    return RenderController::renderCreate();
 });
 
-Route::get('/test', function () {
-    $tracking = $_GET['tracking'];
-    $zipcode = $_GET['zipcode'];
-    return (new MainController)->scrapeDHL($tracking, $zipcode);
+Route::post('/create', function (Request $request) {
+    return RenderController::create($request);
 });
+
