@@ -16,8 +16,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('tracking_number');
             $table->string('zipcode');
-            $table->boolean('completed')->default(false);
-            $table->boolean('failed')->default(false);
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('orders');
     }
 };

@@ -8,15 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class order extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
     protected $fillable = [
         'name',
         'tracking_number',
         'zipcode',
-        'completed',
-        'failed'
     ];
 
-    protected $dates = ['deleted_at'];
 }

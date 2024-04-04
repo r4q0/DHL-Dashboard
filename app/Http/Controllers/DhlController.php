@@ -14,4 +14,5 @@ class MainController extends Controller
         $response = Http::get($url);
         return response()->json($response->json());
     }
+    
 }
