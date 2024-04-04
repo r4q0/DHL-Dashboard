@@ -7,10 +7,16 @@ use Illuminate\Http\Request;
 
 class RenderController extends Controller
 {
+    public static function renderDashboard()
+    {
+        
+    }
+
     public static function renderCreate()
     {
         return view('create');
     }
+
     public static function create(Request $request)
     {
         $validated = $request->validate([
