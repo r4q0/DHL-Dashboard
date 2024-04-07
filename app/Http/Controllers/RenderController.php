@@ -9,8 +9,10 @@ class RenderController extends Controller
 {
     public static function renderDashboard()
     {
-        
-    }
+        return view('welcome', [
+            'orders' => order::all()
+        ]);
+    }  
 
     public static function renderCreate()
     {
