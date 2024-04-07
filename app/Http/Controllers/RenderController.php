@@ -14,6 +14,14 @@ class RenderController extends Controller
         ]);
     }  
 
+
+    public static function renderOrder($orderId)
+    {
+        return view('order', [
+            'order' => order::find($orderId)
+        ]);
+    }
+
     public static function renderCreate()
     {
         return view('create');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Carbon\Carbon;
 
 class DhlController extends Controller
 {
@@ -34,14 +35,13 @@ class DhlController extends Controller
         foreach ($clean[0]['events'] as $event) {
             $data['events'][] = [
                 'category' => $event['category'],
-                'timestamp' => $event['timestamp'],
+                'timestamp' => Carbon::parse($event['timestamp'])->diffForHumans(),
                 'status' => $event['status'],
             ];
-            
         }
         $data['status'] = $data['events'][count($data['events']) - 1]['status'];
-        $data['category '] = $data['events'][count($data['events']) - 1]['status'];
-        $data['status'] = $data['events'][count($data['events']) - 1]['status'];
+        $data['category '] = $data['events'][count($data['events']) - 1]['category'];
+        $data['timestamp'] = Carbon::parse($data['events'][count($data['events']) - 1]['timestamp'])->diffForHumans();
 
         return response()->json($data);
     }
