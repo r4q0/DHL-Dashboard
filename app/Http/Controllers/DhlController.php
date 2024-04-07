@@ -40,9 +40,9 @@ class DhlController extends Controller
             ];
         }
         $data['status'] = $data['events'][count($data['events']) - 1]['status'];
-        $data['category '] = $data['events'][count($data['events']) - 1]['category'];
+        $data['category'] = $data['events'][count($data['events']) - 1]['category'];
         $data['timestamp'] = Carbon::parse($data['events'][count($data['events']) - 1]['timestamp'])->diffForHumans();
 
-        return response()->json($data);
+        return $data;
     }
 }

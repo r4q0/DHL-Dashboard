@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\order;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\DhlController;
 class RenderController extends Controller
 {
     public static function renderDashboard()
@@ -17,8 +17,9 @@ class RenderController extends Controller
 
     public static function renderOrder($orderId)
     {
+        $data = DhlController::scrapeDHL(order::find($orderId)->tracking_number, order::find($orderId)->zipcode);
         return view('order', [
-            'order' => order::find($orderId)
+            'order' => $data
         ]);
     }
 
