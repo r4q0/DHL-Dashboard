@@ -7,7 +7,7 @@ events {
 	status
 	}
 
-	delivery addres (pickup)
+	<!-- delivery addres (	) -->
 
 receiver {
 	name

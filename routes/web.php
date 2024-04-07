@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DhlController;
 use App\Http\Controllers\RenderController;
 use Illuminate\Http\Request;
 
-use function Termwind\render;
+Route::get('/test', function () {
+    return DhlController::scrapeDHL('JJD000090254011014512771', '8011CJ');
+});
 
 
 Route::get('/', function () {
