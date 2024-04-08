@@ -23,6 +23,7 @@ class RenderController extends Controller
     public static function renderOrder($orderId)
     {
         $data = DhlController::scrapeDHL(order::find($orderId)->tracking_number, order::find($orderId)->zipcode);
+        $data = array_reverse($data);
         return view('order', [
             'order' => $data,
             'orderId' => $orderId,
@@ -46,6 +47,6 @@ class RenderController extends Controller
         $order->tracking_number = $validated['tracking_number'];
         $order->zipcode = $validated['zipcode'];
         $order->save();
-        return redirect('/create');
+        return redirect(route('welcome'));
     }
 }

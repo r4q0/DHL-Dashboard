@@ -23,15 +23,21 @@
 
            <div class="overflow-hidden max-w-auto  font-mono font-medium p-4 leading-6 text-sky-500 hover:font-black whitespace-nowrap hover:border-slate-200 text-sky-400 border border-slate-100 dark:border-slate-400/10">
             <h2 class="overflow-hidden mb-5 text-center text-5xl p-5 font-mono self-start whitespace-pre text-slate-200 font-black leading-6 ">Destination</h2>
+            @if (!empty($order['dstination']['name']))
             <h3 class="text-center text-2xl p-1 font-mono whitespace-pre text-sky-400 leading-6  ">Name: {{$order['destination']['name']}}</h3>
+        @endif
             <h3 class="text-center text-2xl p-1 font-mono whitespace-pre text-sky-400 leading-6  ">Type: {{$order['destination']['type']}}</h3>
-            <h3 class="text-center text-2xl p-1 font-mono whitespace-pre text-sky-400 leading-6  ">Location: <a class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600" href="https://www.google.com/maps/place/{{$order['destination']['houseNumber']}}+{{$order['destination']['street']}},{{$order['destination']['city']}}">Link</a></h3>
+            <h3 class="text-center text-2xl p-1 font-mono whitespace-pre text-sky-400 leading-6  ">Location: <a class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600" href="https://www.google.com/maps/place/{{$order['destination']['houseNumber']}}+{{$order['destination']['street']}},{{$order['destination']['city']}}" target="blank">Link</a></h3>
      </div>
     
              <div class="font-mono font-medium p-4 leading-6 text-sky-500 hover:font-black whitespace-nowrap hover:border-slate-200 text-sky-400 border border-slate-100 dark:border-slate-400/10">
                 <h2 class="text-center text-5xl  mb-5  p-5 font-mono whitespace-pre text-slate-200 font-black leading-6 ">Receiver</h2>
-                <h3 class="text-center text-2xl p-1 font-mono whitespace-pre text-sky-400 leading-6 ">Name: {{$order['receiver']['name']}}</h3>
-                <h3 class="text-center text-2xl p-1 font-mono whitespace-pre text-sky-400 leading-6 ">Street: {{$order['receiver']['street']}}</h3>
+                @if (!empty($order['receiver']['name']))
+                    <h3 class="text-center text-2xl p-1 font-mono whitespace-pre text-sky-400 leading-6 ">Name: {{$order['receiver']['name']}}</h3>
+                @endif
+                @if (!empty($order['receiver']['street']))
+                    <h3 class="text-center text-2xl p-1 font-mono whitespace-pre text-sky-400 leading-6 ">Street: {{$order['receiver']['street']}}</h3>
+                @endif
                 <h3 class="text-center text-2xl p-1 font-mono whitespace-pre text-sky-400 leading-6">House Number: {{$order['receiver']['houseNumber']}}</h3>
              </div>
             </div>

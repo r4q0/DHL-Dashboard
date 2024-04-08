@@ -25,7 +25,7 @@ class DhlController extends Controller
             ],
             'destination' => [
                 'type' => $clean[0]['lastKnownDestination']['type'],
-                'name' => $clean[0]['lastKnownDestination']['name'],
+                'name' => isset($clean[0]['lastKnownDestination']['name']) ? $clean[0]['lastKnownDestination']['name'] : null,
                 'city' => $clean[0]['lastKnownDestination']['address']['city'],
                 'street' => $clean[0]['lastKnownDestination']['address']['street'],
                 'houseNumber' => $clean[0]['lastKnownDestination']['address']['houseNumber'],
