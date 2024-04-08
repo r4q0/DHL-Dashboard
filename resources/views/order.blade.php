@@ -10,7 +10,7 @@
 <body class="overflow-hidden overflow-y-auto whitespace-nowrap h-screen text-slate-400 bg-slate-900">
     <button onclick="location.href='{{URL::previous()}}';" type="button"
         class="m-2 mt-4 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none  focus:ring-blue-800 shadow-lg shadow-blue-800/80 rounded-lg text-2xl px-3 py-1 font-bold text-center  ">Back</button>
-        <button onclick="location.href='{{URL::previous()}}';" type="button"
+        <button onclick="location.href='{{route('remove', ['id' => $orderId])}}';" type="button"
         class="m-2 mt-4 text-white bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none  focus:ring-red-800 shadow-lg shadow-red-800/80 rounded-lg text-2xl px-3 py-1 font-bold text-center  ">Delete</button>
     <div class="m-5 flex justify-center antialiased text-slate-400 bg-slate-900">
         <div class=" grid grid-cols-3 gap-10 w-[100vw]">
@@ -48,6 +48,6 @@
             <h3 class="overflow-hidden font-mono font-xs p-4 leading-6 text-sky-500 hover:font-black whitespace-nowrap hover:border-slate-200 text-sky-400 border border-slate-100 dark:border-slate-400/10 text-center p-1 font-mono whitespace-pre text-sky-400 leading-6">Timestamp: {{$event['timestamp']}}</h3>
         </div>
     @endforeach
-        
+
 </body>
 </html>

@@ -15,7 +15,7 @@ Route::get('/order/{id}', function ($id) {
 
 Route::get('/', function () {
     return RenderController::renderDashboard();
-});
+})->name('welcome');
 
 Route::get('/create', function () {
     return RenderController::renderCreate();
@@ -25,3 +25,6 @@ Route::post('/create', function (Request $request) {
     return RenderController::create($request);
 });
 
+Route::get('/remove/{id}', function ($id) {
+    return RenderController::removeOrder($id);
+})->name('remove');

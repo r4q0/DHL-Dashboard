@@ -14,12 +14,18 @@ class RenderController extends Controller
         ]);
     }  
 
+    public static function removeOrder($orderId)
+    {
+        order::destroy($orderId);
+        return redirect('/');
+    }
 
     public static function renderOrder($orderId)
     {
         $data = DhlController::scrapeDHL(order::find($orderId)->tracking_number, order::find($orderId)->zipcode);
         return view('order', [
-            'order' => $data
+            'order' => $data,
+            'orderId' => $orderId,
         ]);
     }
 
