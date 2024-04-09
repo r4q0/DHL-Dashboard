@@ -23,7 +23,7 @@
 
            <div class="overflow-hidden max-w-auto  font-mono font-medium p-4 leading-6 text-sky-500 hover:font-black whitespace-nowrap hover:border-slate-200 text-sky-400 border border-slate-100 dark:border-slate-400/10">
             <h2 class="overflow-hidden mb-5 text-center text-5xl p-5 font-mono self-start whitespace-pre text-slate-200 font-black leading-6 ">Destination</h2>
-            @if (!empty($order['dstination']['name']))
+            @if (!empty($order['destination']['name']))
             <h3 class="text-center text-2xl p-1 font-mono whitespace-pre text-sky-400 leading-6  ">Name: {{$order['destination']['name']}}</h3>
         @endif
             <h3 class="text-center text-2xl p-1 font-mono whitespace-pre text-sky-400 leading-6  ">Type: {{$order['destination']['type']}}</h3>
