@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\DhlController;
+
 class RenderController extends Controller
 {
     public static function renderDashboard()
@@ -12,7 +13,7 @@ class RenderController extends Controller
         return view('welcome', [
             'orders' => order::all()
         ]);
-    }  
+    }
 
     public static function removeOrder($orderId)
     {
@@ -22,7 +23,11 @@ class RenderController extends Controller
 
     public static function renderOrder($orderId)
     {
-        $data = DhlController::scrapeDHL(order::find($orderId)->tracking_number, order::find($orderId)->zipcode);
+        try {
+            $data = DhlController::scrapeDHL(order::find($orderId)->tracking_number, order::find($orderId)->zipcode);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'There is something wrong with the data of this package please make sure that it is real data otherwise delete the order by going to order/(id)/delete'], 404);
+        }
         $data = array_reverse($data);
         return view('order', [
             'order' => $data,
