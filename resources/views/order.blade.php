@@ -32,7 +32,7 @@
 
             <div class="font-mono font-medium p-4 leading-6 text-sky-500 hover:font-black whitespace-nowrap hover:border-slate-200 text-sky-400 border border-slate-100 dark:border-slate-400/10">
                 <h2 class="text-center text-2xl md:text-5xl mb-5 p-5 font-mono whitespace-pre text-slate-200 font-black leading-6">Receiver</h2>
-                @if (!empty($order['receiver']['name']))
+                @if (!empty($order['receiver']['name']))        
                     <h3 class="text-center text-lg md:text-2xl p-1 font-mono whitespace-pre text-sky-400 leading-6">Name: {{$order['receiver']['name']}}</h3>
                 @endif
                 @if (!empty($order['receiver']['street']))
