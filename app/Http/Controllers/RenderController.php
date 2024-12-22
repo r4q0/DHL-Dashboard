@@ -26,7 +26,8 @@ class RenderController extends Controller
         try {
             $data = DhlController::scrapeDHL(order::find($orderId)->tracking_number, order::find($orderId)->zipcode);
         } catch (\Exception $e) {
-            return response()->json(['error' => 'There is something wrong with the data of this package please make sure that it is real data otherwise delete the order by going to order/(id)/delete'], 404);
+            $url = route('remove', ['id' => $orderId]);
+            return response()->json(['error' => "There is something wrong with the data of this package please make sure that it is real data otherwise delete the order by going to $url"], 404);
         }
         $data = array_reverse($data);
         return view('order', [
