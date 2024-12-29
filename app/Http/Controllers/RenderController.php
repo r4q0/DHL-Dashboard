@@ -24,6 +24,9 @@ class RenderController extends Controller
     public static function renderOrder($orderId)
     {
         try {
+
+            $tracking_number = order::find($orderId)->tracking_number;
+            $zipcode = order::find($orderId)->zipcode ?? '';
             $data = DhlController::scrapeDHL(order::find($orderId)->tracking_number, order::find($orderId)->zipcode);
         } catch (\Exception $e) {
             $url = route('remove', ['id' => $orderId]);
@@ -33,6 +36,7 @@ class RenderController extends Controller
         return view('order', [
             'order' => $data,
             'orderId' => $orderId,
+            'url' => env('DHL_URL')."$tracking_number/$zipcode"
         ]);
     }
 

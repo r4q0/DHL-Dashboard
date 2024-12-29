@@ -12,6 +12,8 @@
         class="m-2 mt-4 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 shadow-lg shadow-blue-800/80 rounded-lg text-lg md:text-2xl px-3 py-1 font-bold text-center">Back</button>
     <button onclick="location.href='{{route('remove', ['id' => $orderId])}}';" type="button"
         class="m-2 mt-4 text-white bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-800 shadow-lg shadow-red-800/80 rounded-lg text-lg md:text-2xl px-3 py-1 font-bold text-center">Delete</button>
+        <button onclick="location.href='{{$url}}';" type="button"
+            class="m-2 mt-4 text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-800 shadow-lg shadow-yellow-800/80 rounded-lg text-lg md:text-2xl px-3 py-1 font-bold text-center">Go to DHL</button>     
     <div class="m-5 flex justify-center antialiased text-slate-400 bg-slate-900">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10 w-full">
             <div class="overflow-hidden font-mono font-medium p-4 leading-6 text-sky-500 hover:font-black whitespace-nowrap hover:border-slate-200 text-sky-400 border border-slate-100 dark:border-slate-400/10">
