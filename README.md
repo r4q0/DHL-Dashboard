@@ -11,6 +11,6 @@ This is a quick and simple tool to keep track of your DHL packages. It uses SQLi
 ```BASIC_AUTH_PASSWORD=```
 
 - Base DHL URL of your preferred dashboard
-```DHL_URL=https://my.dhlecommerce.nl/home/tracktrace/```
+```DHL_URL= example(https://my.dhlecommerce.nl/home/tracktrace/)```
 
 Created by Bilal Kerkeni
